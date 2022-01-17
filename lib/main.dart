@@ -22,16 +22,17 @@ class _Quizz extends State<Quizz> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Expanded(
             flex: 5,
-            child: Text(
-              "Question du Quizz",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 25.0,
+            child: Center(
+              child: Text(
+                "Question du Quizz",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 25.0,
+                ),
               ),
             )),
         Expanded(
