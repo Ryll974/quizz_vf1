@@ -26,12 +26,15 @@ class _Quizz extends State<Quizz> {
       children: [
         Expanded(
             flex: 5,
-            child: Center(
-              child: Text(
-                "Question du Quizz",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 25.0,
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Center(
+                child: Text(
+                  "Question du Quizz",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 25.0,
+                  ),
                 ),
               ),
             )),
