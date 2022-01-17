@@ -19,33 +19,7 @@ class Quizz extends StatefulWidget {
 }
 
 class _Quizz extends State<Quizz> {
-  List<Icon> listedesicones = [
-    Icon(
-      Icons.check,
-      color: Colors.green,
-      size: 25.0,
-    ),
-    Icon(
-      Icons.close,
-      color: Colors.red,
-      size: 25.0,
-    ),
-    Icon(
-      Icons.close,
-      color: Colors.red,
-      size: 25.0,
-    ),
-    Icon(
-      Icons.check,
-      color: Colors.green,
-      size: 25.0,
-    ),
-    Icon(
-      Icons.check,
-      color: Colors.green,
-      size: 25.0,
-    ),
-  ];
+  List<Icon> listedesicones = [];
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -72,7 +46,7 @@ class _Quizz extends State<Quizz> {
               child: TextButton(
                   onPressed: () {
                     setState(() {});
-                    print("test Vrai");
+                    listedesicones.add( Icon(Icons.check, color: Colors.green));
                   },
                   style: TextButton.styleFrom(
                     primary: Colors.white,
@@ -93,9 +67,7 @@ class _Quizz extends State<Quizz> {
               child: TextButton(
                   onPressed: () {
                     setState(() {});
-                    print(
-                      "test Faux",
-                    );
+                    listedesicones.add( Icon(Icons.close, color: Colors.red));
                   },
                   style: TextButton.styleFrom(
                     primary: Colors.white,
