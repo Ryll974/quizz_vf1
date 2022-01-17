@@ -82,6 +82,35 @@ class _Quizz extends State<Quizz> {
                     ),
                   )),
             )),
+        Row(
+          children:[
+            Icon(
+              Icons.check,
+              color: Colors.green,
+              size: 25.0,
+            ),
+            Icon(
+              Icons.close,
+              color: Colors.red,
+              size: 25.0,
+            ),
+            Icon(
+              Icons.close,
+              color: Colors.red,
+              size: 25.0,
+            ),
+            Icon(
+              Icons.check,
+              color: Colors.green,
+              size: 25.0,
+            ),
+            Icon(
+              Icons.check,
+              color: Colors.green,
+              size: 25.0,
+            ),
+          ],
+        ),
       ],
     );
   }
