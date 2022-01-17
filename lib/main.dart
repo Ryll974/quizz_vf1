@@ -27,30 +27,57 @@ class _Quizz extends State<Quizz> {
         Expanded(
             flex: 5,
             child: Text(
-                "Question du Quizz"
+              "Question du Quizz",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 25.0,
+              ),
             )),
         Expanded(
             flex: 1,
-            child: TextButton(
-                onPressed: () {
-                  setState(() {
-                  });
-                  print("test Vrai");
-                },
-                child: Text(
-                    "Vrai"
-                ))),
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: TextButton(
+                  onPressed: () {
+                    setState(() {});
+                    print("test Vrai");
+                  },
+                  style: TextButton.styleFrom(
+                    primary: Colors.white,
+                    backgroundColor: Colors.green, // Background Color
+                  ),
+                  child: Text(
+                    "Vrai",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 20.0,
+                    ),
+                  )),
+            )),
         Expanded(
             flex: 1,
-            child: TextButton(
-                onPressed: () {
-                  setState(() {
-                  });
-                  print("test Faux");
-                },
-                child: Text(
-                    "Faux"
-                ))),
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: TextButton(
+                  onPressed: () {
+                    setState(() {});
+                    print(
+                      "test Faux",
+                    );
+                  },
+                  style: TextButton.styleFrom(
+                    primary: Colors.white,
+                    backgroundColor: Colors.red, // Background Color
+                  ),
+                  child: Text(
+                    "Faux",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 20.0,
+                    ),
+                  )),
+            )),
       ],
     );
   }
