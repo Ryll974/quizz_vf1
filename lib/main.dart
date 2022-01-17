@@ -19,10 +19,33 @@ class Quizz extends StatefulWidget {
 }
 
 class _Quizz extends State<Quizz> {
-  final Icon iconRight = Icon(Icons.check,color:Colors.green,size: 25.0,);
-  final Icon iconWrong = Icon(Icons.close,color:Colors.red,size: 25.0,);
-  List<Icon> listedesicones = [];
-  listedesicones = [iconRight];
+  List<Icon> listedesicones = [
+    Icon(
+      Icons.check,
+      color: Colors.green,
+      size: 25.0,
+    ),
+    Icon(
+      Icons.close,
+      color: Colors.red,
+      size: 25.0,
+    ),
+    Icon(
+      Icons.close,
+      color: Colors.red,
+      size: 25.0,
+    ),
+    Icon(
+      Icons.check,
+      color: Colors.green,
+      size: 25.0,
+    ),
+    Icon(
+      Icons.check,
+      color: Colors.green,
+      size: 25.0,
+    ),
+  ];
   @override
   Widget build(BuildContext context) {
     return Column(
