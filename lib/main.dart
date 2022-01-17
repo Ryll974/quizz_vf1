@@ -13,13 +13,29 @@ void main() {
 
 class Quizz extends StatefulWidget {
   const Quizz({Key? key}) : super(key: key);
-
   @override
   _Quizz createState() => _Quizz();
 }
 
+class Question {
+  String question;
+  bool reponse;
+  Question(this.question, this.reponse);
+}
+
 class _Quizz extends State<Quizz> {
   List<Icon> listedesicones = [];
+  final List<Question> listedesquestions = [
+    Question('Question 1 ?',true),
+    Question('Question 2 ?',true),
+    Question('Question 3 ?',true),
+    Question('Question 4 ?',true),
+    Question('Question 5 ?',true),
+    Question('Question 6 ?',true),
+    Question('Question 7 ?',true),
+    Question('Question 8 ?',true),
+    Question('Question 9 ?',true),
+  ];
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -31,7 +47,7 @@ class _Quizz extends State<Quizz> {
               padding: const EdgeInsets.all(15.0),
               child: Center(
                 child: Text(
-                  "Question du Quizz",
+                  listedesquestions[1].question,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 25.0,
