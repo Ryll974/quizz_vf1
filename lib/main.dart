@@ -27,15 +27,15 @@ class Question {
 class _Quizz extends State<Quizz> {
   List<Icon> suiviScore = [];
   final List<Question> listedesquestions = [
-    Question('Question 1 ?',true),
-    Question('Question 2 ?',true),
-    Question('Question 3 ?',true),
-    Question('Question 4 ?',true),
-    Question('Question 5 ?',true),
-    Question('Question 6 ?',true),
-    Question('Question 7 ?',true),
-    Question('Question 8 ?',true),
-    Question('Question 9 ?',true),
+    Question('Question 1 ?', true),
+    Question('Question 2 ?', true),
+    Question('Question 3 ?', true),
+    Question('Question 4 ?', true),
+    Question('Question 5 ?', true),
+    Question('Question 6 ?', true),
+    Question('Question 7 ?', true),
+    Question('Question 8 ?', true),
+    Question('Question 9 ?', true),
   ];
   int NumeroQuestion = 0;
   @override
@@ -64,15 +64,19 @@ class _Quizz extends State<Quizz> {
               padding: const EdgeInsets.all(15.0),
               child: TextButton(
                   onPressed: () {
-                    bool bonneReponse = listedesquestions[NumeroQuestion].reponse;
+                    bool bonneReponse =
+                        listedesquestions[NumeroQuestion].reponse;
                     setState(() {
-                      if (bonneReponse == true){
-                        suiviScore.add( Icon(Icons.check, color: Colors.green));
+                      if (suiviScore.length != listedesquestions.length) {
+                        if (bonneReponse == true) {
+                          suiviScore
+                              .add(Icon(Icons.check, color: Colors.green));
+                        } else {
+                          suiviScore.add(Icon(Icons.close, color: Colors.red));
+                        }
                       }
-                      else{
-                        suiviScore.add( Icon(Icons.close, color: Colors.red));
-                      }
-                      NumeroQuestion ++;
+                      if (NumeroQuestion < listedesquestions.length - 1)
+                        NumeroQuestion++;
                     });
                   },
                   style: TextButton.styleFrom(
@@ -93,15 +97,19 @@ class _Quizz extends State<Quizz> {
               padding: const EdgeInsets.all(15.0),
               child: TextButton(
                   onPressed: () {
-                    bool bonneReponse = listedesquestions[NumeroQuestion].reponse;
+                    bool bonneReponse =
+                        listedesquestions[NumeroQuestion].reponse;
                     setState(() {
-                      if (bonneReponse == false){
-                        suiviScore.add( Icon(Icons.check, color: Colors.green));
+                      if (suiviScore.length != listedesquestions.length) {
+                        if (bonneReponse == false) {
+                          suiviScore
+                              .add(Icon(Icons.check, color: Colors.green));
+                        } else {
+                          suiviScore.add(Icon(Icons.close, color: Colors.red));
+                        }
                       }
-                      else{
-                        suiviScore.add( Icon(Icons.close, color: Colors.red));
-                      }
-                      NumeroQuestion ++;
+                      if (NumeroQuestion < listedesquestions.length - 1)
+                        NumeroQuestion++;
                     });
                   },
                   style: TextButton.styleFrom(
