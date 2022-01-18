@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:math';
+import 'questions.dart';
 
 void main() {
   runApp(
@@ -18,25 +18,8 @@ class Quizz extends StatefulWidget {
   _Quizz createState() => _Quizz();
 }
 
-class Question {
-  String question;
-  bool reponse;
-  Question(this.question, this.reponse);
-}
-
 class _Quizz extends State<Quizz> {
   List<Icon> suiviScore = [];
-  final List<Question> listedesquestions = [
-    Question('Question 1 ?', true),
-    Question('Question 2 ?', true),
-    Question('Question 3 ?', true),
-    Question('Question 4 ?', true),
-    Question('Question 5 ?', true),
-    Question('Question 6 ?', true),
-    Question('Question 7 ?', true),
-    Question('Question 8 ?', true),
-    Question('Question 9 ?', true),
-  ];
   int NumeroQuestion = 0;
   @override
   Widget build(BuildContext context) {
