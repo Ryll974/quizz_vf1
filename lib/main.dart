@@ -64,9 +64,15 @@ class _Quizz extends State<Quizz> {
               padding: const EdgeInsets.all(15.0),
               child: TextButton(
                   onPressed: () {
+                    bool bonneReponse = listedesquestions[NumeroQuestion].reponse;
                     setState(() {
-                      suiviScore.add( Icon(Icons.check, color: Colors.green));
-                      NumeroQuestion += 1;
+                      if (bonneReponse == true){
+                        suiviScore.add( Icon(Icons.check, color: Colors.green));
+                      }
+                      else{
+                        suiviScore.add( Icon(Icons.close, color: Colors.red));
+                      }
+                      NumeroQuestion ++;
                     });
                   },
                   style: TextButton.styleFrom(
@@ -87,9 +93,15 @@ class _Quizz extends State<Quizz> {
               padding: const EdgeInsets.all(15.0),
               child: TextButton(
                   onPressed: () {
+                    bool bonneReponse = listedesquestions[NumeroQuestion].reponse;
                     setState(() {
-                      suiviScore.add( Icon(Icons.close, color: Colors.red));
-                      NumeroQuestion += 1;
+                      if (bonneReponse == false){
+                        suiviScore.add( Icon(Icons.check, color: Colors.green));
+                      }
+                      else{
+                        suiviScore.add( Icon(Icons.close, color: Colors.red));
+                      }
+                      NumeroQuestion ++;
                     });
                   },
                   style: TextButton.styleFrom(
