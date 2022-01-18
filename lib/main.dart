@@ -25,7 +25,7 @@ class Question {
 }
 
 class _Quizz extends State<Quizz> {
-  List<Icon> listedesicones = [];
+  List<Icon> suiviScore = [];
   final List<Question> listedesquestions = [
     Question('Question 1 ?',true),
     Question('Question 2 ?',true),
@@ -37,7 +37,7 @@ class _Quizz extends State<Quizz> {
     Question('Question 8 ?',true),
     Question('Question 9 ?',true),
   ];
-  int RandomQuestion = Random().nextInt(9);
+  int NumeroQuestion = 0;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -49,7 +49,8 @@ class _Quizz extends State<Quizz> {
               padding: const EdgeInsets.all(15.0),
               child: Center(
                 child: Text(
-                  listedesquestions[RandomQuestion].question,
+                  listedesquestions[NumeroQuestion].question,
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 25.0,
@@ -63,8 +64,10 @@ class _Quizz extends State<Quizz> {
               padding: const EdgeInsets.all(15.0),
               child: TextButton(
                   onPressed: () {
-                    setState(() {});
-                    listedesicones.add( Icon(Icons.check, color: Colors.green));
+                    setState(() {
+                      suiviScore.add( Icon(Icons.check, color: Colors.green));
+                      NumeroQuestion += 1;
+                    });
                   },
                   style: TextButton.styleFrom(
                     primary: Colors.white,
@@ -84,8 +87,10 @@ class _Quizz extends State<Quizz> {
               padding: const EdgeInsets.all(15.0),
               child: TextButton(
                   onPressed: () {
-                    setState(() {});
-                    listedesicones.add( Icon(Icons.close, color: Colors.red));
+                    setState(() {
+                      suiviScore.add( Icon(Icons.close, color: Colors.red));
+                      NumeroQuestion += 1;
+                    });
                   },
                   style: TextButton.styleFrom(
                     primary: Colors.white,
@@ -100,7 +105,7 @@ class _Quizz extends State<Quizz> {
                   )),
             )),
         Row(
-          children: listedesicones,
+          children: suiviScore,
         ),
       ],
     );
