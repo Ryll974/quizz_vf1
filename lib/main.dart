@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 void main() {
   runApp(
@@ -36,6 +37,7 @@ class _Quizz extends State<Quizz> {
     Question('Question 8 ?',true),
     Question('Question 9 ?',true),
   ];
+  int RandomQuestion = Random().nextInt(9);
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -47,7 +49,7 @@ class _Quizz extends State<Quizz> {
               padding: const EdgeInsets.all(15.0),
               child: Center(
                 child: Text(
-                  listedesquestions[1].question,
+                  listedesquestions[RandomQuestion].question,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 25.0,
