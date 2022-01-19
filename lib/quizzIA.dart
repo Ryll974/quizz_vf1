@@ -24,6 +24,10 @@ class QuizzIA {
     if (_NumeroQuestion < _questions.length - 1) _NumeroQuestion++;
   }
 
+  void stopQuestions() {
+    if (_NumeroQuestion >= _questions.length - 1) _NumeroQuestion = 0;
+  }
+
   String getQuestionText() {
     return _questions[_NumeroQuestion].question;
   }
