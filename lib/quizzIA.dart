@@ -2,6 +2,7 @@ import 'question.dart';
 
 class QuizzIA {
   int _NumeroQuestion = 0;
+  bool _fin = false;
   List<Question> _questions = [
     Question(q: "l'alter ego de Superman est Peter Parker ?", r: false),
     Question(
@@ -21,11 +22,7 @@ class QuizzIA {
         r: false),
   ];
   void nextQuestion() {
-    if (_NumeroQuestion < _questions.length - 1) _NumeroQuestion++;
-  }
-
-  void stopQuestions() {
-    if (_NumeroQuestion >= _questions.length - 1) _NumeroQuestion = 0;
+    if (_NumeroQuestion < _questions.length - 1) {_NumeroQuestion++;} else {_fin = true;}
   }
 
   String getQuestionText() {
@@ -39,4 +36,9 @@ class QuizzIA {
   int getQuestionsLenght() {
     return _questions.length;
   }
+
+  bool getFinished() {
+    return _fin;
+  }
+
 }

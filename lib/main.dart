@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'quizzIA.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 QuizzIA qIA = QuizzIA();
 
@@ -32,8 +33,10 @@ class _Quizz extends State<Quizz> {
       } else {
         suiviScore.add(Icon(Icons.close, color: Colors.red));
       }
-      qIA.stopQuestions();
       qIA.nextQuestion();
+      if (qIA.getFinished() == true) {
+        Alert(context: context, title: "Bravo !", desc: "Le Quizz est terminé").show();
+      }
     });
   }
 
