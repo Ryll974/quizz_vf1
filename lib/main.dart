@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'questions.dart';
+import 'quizzIA.dart';
+QuizzIA qIA = QuizzIA();
 
 void main() {
   runApp(
@@ -32,7 +33,7 @@ class _Quizz extends State<Quizz> {
               padding: const EdgeInsets.all(15.0),
               child: Center(
                 child: Text(
-                  listedesquestions[NumeroQuestion].question,
+                  qIA.questions[NumeroQuestion].question,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
@@ -48,9 +49,9 @@ class _Quizz extends State<Quizz> {
               child: TextButton(
                   onPressed: () {
                     bool bonneReponse =
-                        listedesquestions[NumeroQuestion].reponse;
+                        qIA.questions[NumeroQuestion].reponse;
                     setState(() {
-                      if (suiviScore.length != listedesquestions.length) {
+                      if (suiviScore.length != qIA.questions.length) {
                         if (bonneReponse == true) {
                           suiviScore
                               .add(Icon(Icons.check, color: Colors.green));
@@ -58,7 +59,7 @@ class _Quizz extends State<Quizz> {
                           suiviScore.add(Icon(Icons.close, color: Colors.red));
                         }
                       }
-                      if (NumeroQuestion < listedesquestions.length - 1)
+                      if (NumeroQuestion < qIA.questions.length - 1)
                         NumeroQuestion++;
                     });
                   },
@@ -81,9 +82,9 @@ class _Quizz extends State<Quizz> {
               child: TextButton(
                   onPressed: () {
                     bool bonneReponse =
-                        listedesquestions[NumeroQuestion].reponse;
+                        qIA.questions[NumeroQuestion].reponse;
                     setState(() {
-                      if (suiviScore.length != listedesquestions.length) {
+                      if (suiviScore.length != qIA.questions.length) {
                         if (bonneReponse == false) {
                           suiviScore
                               .add(Icon(Icons.check, color: Colors.green));
@@ -91,7 +92,7 @@ class _Quizz extends State<Quizz> {
                           suiviScore.add(Icon(Icons.close, color: Colors.red));
                         }
                       }
-                      if (NumeroQuestion < listedesquestions.length - 1)
+                      if (NumeroQuestion < qIA.questions.length - 1)
                         NumeroQuestion++;
                     });
                   },
