@@ -21,7 +21,6 @@ class Quizz extends StatefulWidget {
 
 class _Quizz extends State<Quizz> {
   List<Icon> suiviScore = [];
-  int NumeroQuestion = 0;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -33,7 +32,7 @@ class _Quizz extends State<Quizz> {
               padding: const EdgeInsets.all(15.0),
               child: Center(
                 child: Text(
-                  qIA.questions[NumeroQuestion].question,
+                  qIA.getQuestionText(),
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
@@ -49,18 +48,15 @@ class _Quizz extends State<Quizz> {
               child: TextButton(
                   onPressed: () {
                     bool bonneReponse =
-                        qIA.questions[NumeroQuestion].reponse;
+                        qIA.getAnswer();
                     setState(() {
-                      if (suiviScore.length != qIA.questions.length) {
                         if (bonneReponse == true) {
                           suiviScore
                               .add(Icon(Icons.check, color: Colors.green));
                         } else {
                           suiviScore.add(Icon(Icons.close, color: Colors.red));
                         }
-                      }
-                      if (NumeroQuestion < qIA.questions.length - 1)
-                        NumeroQuestion++;
+                      qIA.nextQuestion();
                     });
                   },
                   style: TextButton.styleFrom(
@@ -82,18 +78,15 @@ class _Quizz extends State<Quizz> {
               child: TextButton(
                   onPressed: () {
                     bool bonneReponse =
-                        qIA.questions[NumeroQuestion].reponse;
+                    qIA.getAnswer();
                     setState(() {
-                      if (suiviScore.length != qIA.questions.length) {
-                        if (bonneReponse == false) {
-                          suiviScore
-                              .add(Icon(Icons.check, color: Colors.green));
-                        } else {
-                          suiviScore.add(Icon(Icons.close, color: Colors.red));
-                        }
+                      if (bonneReponse == false) {
+                        suiviScore
+                            .add(Icon(Icons.check, color: Colors.green));
+                      } else {
+                        suiviScore.add(Icon(Icons.close, color: Colors.red));
                       }
-                      if (NumeroQuestion < qIA.questions.length - 1)
-                        NumeroQuestion++;
+                      qIA.nextQuestion();
                     });
                   },
                   style: TextButton.styleFrom(

@@ -1,7 +1,8 @@
 import 'question.dart';
 
 class QuizzIA {
-  List<Question> questions = [
+  int _NumeroQuestion = 0;
+  List<Question> _questions = [
     Question(q: "l'alter ego de Superman est Peter Parker ?", r: false),
     Question(
         q: "Dans Star Wars, la princesse Leïa est la soeur jumelle de Luke Skywalker ?",
@@ -19,7 +20,19 @@ class QuizzIA {
     Question(q: "C'est l'Italie qui a gagné la Coupe du monde 2014 au foot ?",
         r: false),
   ];
-  getQuestionText() {
+  void nextQuestion() {
+    if (_NumeroQuestion < _questions.length - 1) _NumeroQuestion++;
+  }
 
+  String getQuestionText() {
+    return _questions[_NumeroQuestion].question;
+  }
+
+  bool getAnswer() {
+    return _questions[_NumeroQuestion].reponse;
+  }
+
+  int getQuestionsLenght() {
+    return _questions.length;
   }
 }
